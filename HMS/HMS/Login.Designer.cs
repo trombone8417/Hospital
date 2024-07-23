@@ -1,7 +1,7 @@
 ﻿
 namespace HMS
 {
-    partial class Form1
+    partial class Login
     {
         /// <summary>
         /// 設計工具所需的變數。
@@ -29,7 +29,7 @@ namespace HMS
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnLogin = new System.Windows.Forms.Button();

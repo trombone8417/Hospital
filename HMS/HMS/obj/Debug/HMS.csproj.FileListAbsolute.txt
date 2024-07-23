@@ -2,10 +2,10 @@ D:\桌面\Hospital\HMS\HMS\bin\Debug\HMS.exe.config
 D:\桌面\Hospital\HMS\HMS\bin\Debug\HMS.exe
 D:\桌面\Hospital\HMS\HMS\bin\Debug\HMS.pdb
 D:\桌面\Hospital\HMS\HMS\obj\Debug\HMS.csproj.AssemblyReference.cache
-D:\桌面\Hospital\HMS\HMS\obj\Debug\HMS.Form1.resources
 D:\桌面\Hospital\HMS\HMS\obj\Debug\HMS.Properties.Resources.resources
 D:\桌面\Hospital\HMS\HMS\obj\Debug\HMS.csproj.GenerateResource.cache
 D:\桌面\Hospital\HMS\HMS\obj\Debug\HMS.csproj.CoreCompileInputs.cache
 D:\桌面\Hospital\HMS\HMS\obj\Debug\HMS.exe
 D:\桌面\Hospital\HMS\HMS\obj\Debug\HMS.pdb
 D:\桌面\Hospital\HMS\HMS\obj\Debug\HMS.Dashboard.resources
+D:\桌面\Hospital\HMS\HMS\obj\Debug\HMS.Login.resources

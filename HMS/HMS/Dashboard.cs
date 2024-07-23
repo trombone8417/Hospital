@@ -26,12 +26,21 @@ namespace HMS
         private void Dashboard_Load(object sender, EventArgs e)
         {
             panel1.Visible = false;
+            panel2.Visible = false;
+            
         }
 
         private void btnAddPatient_Click(object sender, EventArgs e)
         {
             panel1.Visible = true;
+            panel2.Visible = false;
+        }
 
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            panel1.Visible = false;
+            panel2.Visible = true;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -74,6 +83,62 @@ namespace HMS
             txtAny.Clear();
             txtPID.Clear();
             comboGender.ResetText();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            if(textBox1.Text != "")
+            {
+                int pid = Convert.ToInt32(textBox1.Text);
+                SqlConnection con = new SqlConnection();
+                con.ConnectionString = "data source=DESKTOP-E4UN3CO;initial catalog=hospital;integrated security=true;";
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = con;
+                cmd.CommandText = "select * from AddPatient where pid = " + pid + "";
+
+                SqlDataAdapter DA = new SqlDataAdapter(cmd);
+                DataSet DS = new DataSet();
+                DA.Fill(DS);
+
+                dataGridView1.DataSource = DS.Tables[0];
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int pid = Convert.ToInt32(textBox1.Text);
+                String sympt = txtBxSymptoms.Text;
+                String diag = txtBxDiagonosis.Text;
+                String medicine = txtBxMedicines.Text;
+                String ward = comboBxWard.Text;
+                String wardType = comboBxWardType.Text;
+
+                SqlConnection con = new SqlConnection();
+                con.ConnectionString = "data source=DESKTOP-E4UN3CO;initial catalog=hospital;integrated security=true;";
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = con;
+                cmd.CommandText = "insert into PatientMore values (" + pid + ",'" + sympt +"','" + diag + "','" + medicine + "','" + ward + "','"+ wardType + "');"; ;
+
+                SqlDataAdapter DA = new SqlDataAdapter(cmd);
+                DataSet DS = new DataSet();
+                DA.Fill(DS);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Any field is empty 'OR' Data is in WRONG format");
+            }
+
+            MessageBox.Show("Data Saved!");
+
+            textBox1.Clear();
+            txtBxSymptoms.Clear();
+            txtBxDiagonosis.Clear();
+            txtBxMedicines.Clear();
+            comboBxWard.ResetText();
+            comboBxWardType.ResetText();
+
         }
     }
 }
