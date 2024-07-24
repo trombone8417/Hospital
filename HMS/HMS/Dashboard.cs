@@ -27,13 +27,16 @@ namespace HMS
         {
             panel1.Visible = false;
             panel2.Visible = false;
-            
+            panel3.Visible = false;
+            panel4.Visible = false;
         }
 
         private void btnAddPatient_Click(object sender, EventArgs e)
         {
             panel1.Visible = true;
             panel2.Visible = false;
+            panel3.Visible = false;
+            panel4.Visible = false;
         }
 
 
@@ -41,8 +44,35 @@ namespace HMS
         {
             panel1.Visible = false;
             panel2.Visible = true;
+            panel3.Visible = false;
+            panel4.Visible = false;
         }
 
+        private void btnHospital_Click(object sender, EventArgs e)
+        {
+            panel1.Visible = false;
+            panel2.Visible = false;
+            panel3.Visible = false;
+            panel4.Visible = true;
+        }
+        private void btnFullHistory_Click(object sender, EventArgs e)
+        {
+            panel1.Visible = false;
+            panel2.Visible = false;
+            panel3.Visible = true;
+            panel4.Visible = false;
+            SqlConnection con = new SqlConnection();
+            con.ConnectionString = "data source=DESKTOP-E4UN3CO;initial catalog=hospital;integrated security=true;";
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = con;
+            cmd.CommandText = "select * from AddPatient inner join PatientMore on AddPatient.pid = PatientMore.pid";
+
+            SqlDataAdapter DA = new SqlDataAdapter(cmd);
+            DataSet DS = new DataSet();
+            DA.Fill(DS);
+
+            dataGridView2.DataSource = DS.Tables[0];
+        }
         private void btnSave_Click(object sender, EventArgs e)
         {
             try
@@ -140,5 +170,6 @@ namespace HMS
             comboBxWardType.ResetText();
 
         }
+
     }
 }

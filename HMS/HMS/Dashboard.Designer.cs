@@ -29,6 +29,7 @@ namespace HMS
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             this.label1 = new System.Windows.Forms.Label();
             this.controller = new System.Windows.Forms.Label();
             this.btnAddNew = new System.Windows.Forms.Button();
@@ -37,22 +38,6 @@ namespace HMS
             this.btnHospital = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.comboBxWardType = new System.Windows.Forms.ComboBox();
-            this.comboBxWard = new System.Windows.Forms.ComboBox();
-            this.txtBxMedicines = new System.Windows.Forms.TextBox();
-            this.txtBxDiagonosis = new System.Windows.Forms.TextBox();
-            this.txtBxSymptoms = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.comboGender = new System.Windows.Forms.ComboBox();
             this.txtPID = new System.Windows.Forms.TextBox();
@@ -71,9 +56,34 @@ namespace HMS
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.comboBxWardType = new System.Windows.Forms.ComboBox();
+            this.comboBxWard = new System.Windows.Forms.ComboBox();
+            this.txtBxMedicines = new System.Windows.Forms.TextBox();
+            this.txtBxDiagonosis = new System.Windows.Forms.TextBox();
+            this.txtBxSymptoms = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label18 = new System.Windows.Forms.Label();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -124,6 +134,7 @@ namespace HMS
             this.btnFullHistory.TabIndex = 4;
             this.btnFullHistory.Text = "Full History of the Patient";
             this.btnFullHistory.UseVisualStyleBackColor = true;
+            this.btnFullHistory.Click += new System.EventHandler(this.btnFullHistory_Click);
             // 
             // btnHospital
             // 
@@ -133,6 +144,7 @@ namespace HMS
             this.btnHospital.TabIndex = 5;
             this.btnHospital.Text = "Hospital Information";
             this.btnHospital.UseVisualStyleBackColor = true;
+            this.btnHospital.Click += new System.EventHandler(this.btnHospital_Click);
             // 
             // btnExit
             // 
@@ -168,163 +180,6 @@ namespace HMS
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(638, 344);
             this.panel1.TabIndex = 7;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.button1);
-            this.panel2.Controls.Add(this.comboBxWardType);
-            this.panel2.Controls.Add(this.comboBxWard);
-            this.panel2.Controls.Add(this.txtBxMedicines);
-            this.panel2.Controls.Add(this.txtBxDiagonosis);
-            this.panel2.Controls.Add(this.txtBxSymptoms);
-            this.panel2.Controls.Add(this.textBox1);
-            this.panel2.Controls.Add(this.label17);
-            this.panel2.Controls.Add(this.label16);
-            this.panel2.Controls.Add(this.label15);
-            this.panel2.Controls.Add(this.label14);
-            this.panel2.Controls.Add(this.label13);
-            this.panel2.Controls.Add(this.dataGridView1);
-            this.panel2.Controls.Add(this.label12);
-            this.panel2.Controls.Add(this.label11);
-            this.panel2.Location = new System.Drawing.Point(194, 2);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(638, 344);
-            this.panel2.TabIndex = 18;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(345, 293);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "Save";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // comboBxWardType
-            // 
-            this.comboBxWardType.FormattingEnabled = true;
-            this.comboBxWardType.Items.AddRange(new object[] {
-            "Ac",
-            "Non-Ac",
-            "None"});
-            this.comboBxWardType.Location = new System.Drawing.Point(441, 243);
-            this.comboBxWardType.Name = "comboBxWardType";
-            this.comboBxWardType.Size = new System.Drawing.Size(121, 20);
-            this.comboBxWardType.TabIndex = 13;
-            // 
-            // comboBxWard
-            // 
-            this.comboBxWard.FormattingEnabled = true;
-            this.comboBxWard.Items.AddRange(new object[] {
-            "Yes",
-            "No"});
-            this.comboBxWard.Location = new System.Drawing.Point(441, 209);
-            this.comboBxWard.Name = "comboBxWard";
-            this.comboBxWard.Size = new System.Drawing.Size(121, 20);
-            this.comboBxWard.TabIndex = 12;
-            // 
-            // txtBxMedicines
-            // 
-            this.txtBxMedicines.Location = new System.Drawing.Point(93, 269);
-            this.txtBxMedicines.Name = "txtBxMedicines";
-            this.txtBxMedicines.Size = new System.Drawing.Size(100, 22);
-            this.txtBxMedicines.TabIndex = 11;
-            // 
-            // txtBxDiagonosis
-            // 
-            this.txtBxDiagonosis.Location = new System.Drawing.Point(93, 237);
-            this.txtBxDiagonosis.Name = "txtBxDiagonosis";
-            this.txtBxDiagonosis.Size = new System.Drawing.Size(100, 22);
-            this.txtBxDiagonosis.TabIndex = 10;
-            // 
-            // txtBxSymptoms
-            // 
-            this.txtBxSymptoms.Location = new System.Drawing.Point(93, 209);
-            this.txtBxSymptoms.Name = "txtBxSymptoms";
-            this.txtBxSymptoms.Size = new System.Drawing.Size(100, 22);
-            this.txtBxSymptoms.TabIndex = 9;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(236, 55);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 22);
-            this.textBox1.TabIndex = 8;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(343, 251);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(71, 12);
-            this.label17.TabIndex = 7;
-            this.label17.Text = "Type of Ward";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(343, 212);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(82, 12);
-            this.label16.TabIndex = 6;
-            this.label16.Text = "Wrad Required?";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(20, 269);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(49, 12);
-            this.label15.TabIndex = 5;
-            this.label15.Text = "Medcines";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(18, 242);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(50, 12);
-            this.label14.TabIndex = 4;
-            this.label14.Text = "Diagnosis";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(20, 212);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(56, 12);
-            this.label13.TabIndex = 3;
-            this.label13.Text = "Symptom\'s";
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(20, 83);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(591, 101);
-            this.dataGridView1.TabIndex = 2;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(209, 62);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(20, 12);
-            this.label12.TabIndex = 1;
-            this.label12.Text = "Pid";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label11.Location = new System.Drawing.Point(147, 25);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(259, 16);
-            this.label11.TabIndex = 0;
-            this.label11.Text = "Adding More Information About Patient";
             // 
             // btnSave
             // 
@@ -478,11 +333,215 @@ namespace HMS
             this.label2.TabIndex = 0;
             this.label2.Text = "Add New Patient Record";
             // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.button1);
+            this.panel2.Controls.Add(this.comboBxWardType);
+            this.panel2.Controls.Add(this.comboBxWard);
+            this.panel2.Controls.Add(this.txtBxMedicines);
+            this.panel2.Controls.Add(this.txtBxDiagonosis);
+            this.panel2.Controls.Add(this.txtBxSymptoms);
+            this.panel2.Controls.Add(this.textBox1);
+            this.panel2.Controls.Add(this.label17);
+            this.panel2.Controls.Add(this.label16);
+            this.panel2.Controls.Add(this.label15);
+            this.panel2.Controls.Add(this.label14);
+            this.panel2.Controls.Add(this.label13);
+            this.panel2.Controls.Add(this.dataGridView1);
+            this.panel2.Controls.Add(this.label12);
+            this.panel2.Controls.Add(this.label11);
+            this.panel2.Location = new System.Drawing.Point(194, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(638, 344);
+            this.panel2.TabIndex = 18;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(345, 293);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 14;
+            this.button1.Text = "Save";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // comboBxWardType
+            // 
+            this.comboBxWardType.FormattingEnabled = true;
+            this.comboBxWardType.Items.AddRange(new object[] {
+            "Ac",
+            "Non-Ac",
+            "None"});
+            this.comboBxWardType.Location = new System.Drawing.Point(441, 243);
+            this.comboBxWardType.Name = "comboBxWardType";
+            this.comboBxWardType.Size = new System.Drawing.Size(121, 20);
+            this.comboBxWardType.TabIndex = 13;
+            // 
+            // comboBxWard
+            // 
+            this.comboBxWard.FormattingEnabled = true;
+            this.comboBxWard.Items.AddRange(new object[] {
+            "Yes",
+            "No"});
+            this.comboBxWard.Location = new System.Drawing.Point(441, 209);
+            this.comboBxWard.Name = "comboBxWard";
+            this.comboBxWard.Size = new System.Drawing.Size(121, 20);
+            this.comboBxWard.TabIndex = 12;
+            // 
+            // txtBxMedicines
+            // 
+            this.txtBxMedicines.Location = new System.Drawing.Point(93, 269);
+            this.txtBxMedicines.Name = "txtBxMedicines";
+            this.txtBxMedicines.Size = new System.Drawing.Size(100, 22);
+            this.txtBxMedicines.TabIndex = 11;
+            // 
+            // txtBxDiagonosis
+            // 
+            this.txtBxDiagonosis.Location = new System.Drawing.Point(93, 237);
+            this.txtBxDiagonosis.Name = "txtBxDiagonosis";
+            this.txtBxDiagonosis.Size = new System.Drawing.Size(100, 22);
+            this.txtBxDiagonosis.TabIndex = 10;
+            // 
+            // txtBxSymptoms
+            // 
+            this.txtBxSymptoms.Location = new System.Drawing.Point(93, 209);
+            this.txtBxSymptoms.Name = "txtBxSymptoms";
+            this.txtBxSymptoms.Size = new System.Drawing.Size(100, 22);
+            this.txtBxSymptoms.TabIndex = 9;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(236, 55);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 22);
+            this.textBox1.TabIndex = 8;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(343, 251);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(71, 12);
+            this.label17.TabIndex = 7;
+            this.label17.Text = "Type of Ward";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(343, 212);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(82, 12);
+            this.label16.TabIndex = 6;
+            this.label16.Text = "Wrad Required?";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(20, 269);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(49, 12);
+            this.label15.TabIndex = 5;
+            this.label15.Text = "Medcines";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(18, 242);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(50, 12);
+            this.label14.TabIndex = 4;
+            this.label14.Text = "Diagnosis";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(20, 212);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(56, 12);
+            this.label13.TabIndex = 3;
+            this.label13.Text = "Symptom\'s";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(20, 83);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(591, 101);
+            this.dataGridView1.TabIndex = 2;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(209, 62);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(20, 12);
+            this.label12.TabIndex = 1;
+            this.label12.Text = "Pid";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label11.Location = new System.Drawing.Point(147, 25);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(259, 16);
+            this.label11.TabIndex = 0;
+            this.label11.Text = "Adding More Information About Patient";
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.dataGridView2);
+            this.panel3.Controls.Add(this.label18);
+            this.panel3.Location = new System.Drawing.Point(193, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(638, 341);
+            this.panel3.TabIndex = 15;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label18.Location = new System.Drawing.Point(147, 23);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(168, 16);
+            this.label18.TabIndex = 0;
+            this.label18.Text = "Full History of the Patient";
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(4, 59);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowTemplate.Height = 24;
+            this.dataGridView2.Size = new System.Drawing.Size(630, 279);
+            this.dataGridView2.TabIndex = 1;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.pictureBox1);
+            this.panel4.Location = new System.Drawing.Point(193, 1);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(639, 341);
+            this.panel4.TabIndex = 2;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(102, 14);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(470, 319);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(839, 343);
+            this.Controls.Add(this.panel4);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnExit);
@@ -500,6 +559,11 @@ namespace HMS
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -549,5 +613,10 @@ namespace HMS
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
